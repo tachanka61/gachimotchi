@@ -75,9 +75,9 @@ class Gachimotchi:
 {self.ascii_art}{Fore.GREEN}
 ====== = ======
 Alive   -> {self.alive}
-{Fore.RED if self.stat_food <= 25 else Fore.GREEN}Food    -> {self.stat_food}
-{Fore.RED if self.stat_fatigue >= 75 else Fore.GREEN}Fatigue -> {self.stat_fatigue}
-{Fore.RED if self.stat_mood <= 25 else Fore.GREEN}Mood    -> {self.stat_mood}
+{Fore.RED if self.stat_food <= 25 else Fore.GREEN}Food    -> {self.stat_food}{Fore.GREEN}
+{Fore.RED if self.stat_fatigue >= 75 else Fore.GREEN}Fatigue -> {self.stat_fatigue}{Fore.GREEN}
+{Fore.RED if self.stat_mood <= 25 else Fore.GREEN}Mood    -> {self.stat_mood}{Fore.GREEN}
 Age     -> {self.stat_age}
 """
 
@@ -90,7 +90,7 @@ Age     -> {self.stat_age}
 
         self.move = (
             input(
-                f"{Fore.CYAN}What do you want to do? (Eat, play, do nothing, sleep)\n>{Fore.GREEN} "
+                f"{Fore.CYAN}What do you want to do? (Eat, play, do nothing, sleep, quit)\n>{Fore.GREEN} "
             )
             .strip()
             .lower()
@@ -98,17 +98,17 @@ Age     -> {self.stat_age}
 
         match self.move:
             case ("e" | "eat"):
-                self.move_eat(3)
+                self.move_eat(15)
                 self.show_banner()
             case ("p" | "play"):
-                self.move_play(food_value=2, mood_value=25, fatigue_value=8)
+                self.move_play(food_value=10, mood_value=25, fatigue_value=15)
                 self.show_banner()
             case ("s" | "sleep"):
-                self.move_sleep(age_value=1, food_value=10)
+                self.move_sleep(age_value=2, food_value=20)
                 self.show_banner()
-            case ("d" | "nothing" | "skip" | "do nothing"):
+            case ("n" | "nothing" | "skip" | "do nothing"):
                 self.move_do_nothing(
-                    age_value=1, food_value=5, mood_value=5, fatigue_value=5
+                    age_value=1, food_value=7, mood_value=10, fatigue_value=3
                 )
                 self.show_banner()
             case ("q" | "quit" | "exit"):
@@ -210,7 +210,7 @@ Age     -> {self.stat_age}
 
         if self.stat_food <= 0 or self.stat_mood <= 0 or self.stat_fatigue >= 100:
             self.alive = False
-            print(f"Your {self.name} died :(")
+            print(f"{Fore.RED}Your {self.name} died :(")
             exit(0)
 
         return self.alive

@@ -1,0 +1,25 @@
+#+title: gachimotchi
+#+author: tachanka61
+
+#+html: <p align="center">
+#+html:     <img src="https://img.shields.io/github/last-commit/tachanka61/gachimotchi?logo=github&logoColor=white&style=flat-square&colorA=161b22">
+#+html:     <img src="https://img.shields.io/github/repo-size/tachanka61/gachimotchi?logo=github&logoColor=white&style=flat-square&colorA=161b22">
+#+html:     <img src="https://img.shields.io/github/issues-raw/tachanka61/gachimotchi?logo=github&logoColor=white&style=flat-square&colorA=161b22">
+#+html: </p>
+#+html: <p align="center">
+#+html:     <a href="https://black.readthedocs.io/en/stable/the_black_code_style/index.html">
+#+html:           <img src="https://img.shields.io/badge/Code_style_BLACK-161b22?logo=python&style=for-the-badge">
+#+html: </a>
+#+html: <p align="center">
+#+html:     <a href="https://www.gnu.org/licenses/gpl-3.0.html">
+#+html:           <img src="https://img.shields.io/badge/GNU_GPL_v3-161b22?logo=gnu&style=for-the-badge">
+#+html:     </a>
+
+* Table Of Contents :toc:
+- [[#description][Description]]
+- [[#add-screenshots][Add screenshots]]
+
+* Description
+Simple but funny tagamotchi-like game written in Python
+
+* TODO Add screenshots

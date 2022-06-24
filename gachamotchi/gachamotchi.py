@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 
 # TODO: Add saves
-# TODO: Add colors
 from random import choice
 from os import name as osname, system
+from colorama import Fore, init
+
+init(autoreset=True)
 
 pet_art = """
     |\\__/,|   (`\\
@@ -39,7 +41,9 @@ class Gachamotchi:
         """
 
         self.name = (
-            input("Choose name of your pet (skip to choose random)\n> ")
+            input(
+                f"{Fore.CYAN}Choose name of your pet (skip to choose random)\n>{Fore.GREEN} "
+            )
             .strip()
             .capitalize()
         )
@@ -62,18 +66,18 @@ class Gachamotchi:
         else:  # macOS, Linux, BSD and others
             system("clear")
 
-        self.banner = f"""
+        self.banner = f"""{Fore.MAGENTA}
         _________________________________
        /   Meow!                         \\
       |     My name is {self.name + ' '* (19 - len(self.name))}|
     O  \\_________________________________/
-   o
-{self.ascii_art}
+   o {Fore.CYAN}
+{self.ascii_art}{Fore.GREEN}
 ====== = ======
 Alive   -> {self.alive}
-Food    -> {self.stat_food}
-Fatigue -> {self.stat_fatigue}
-Mood    -> {self.stat_mood}
+{Fore.RED if self.stat_food <= 25 else Fore.GREEN}Food    -> {self.stat_food}
+{Fore.RED if self.stat_fatigue >= 75 else Fore.GREEN}Fatigue -> {self.stat_fatigue}
+{Fore.RED if self.stat_mood <= 25 else Fore.GREEN}Mood    -> {self.stat_mood}
 Age     -> {self.stat_age}
 """
 
@@ -85,7 +89,9 @@ Age     -> {self.stat_age}
         """Get move of the player."""
 
         self.move = (
-            input(f"What do you want to do? (Eat, play, do nothing, sleep)\n> ")
+            input(
+                f"{Fore.CYAN}What do you want to do? (Eat, play, do nothing, sleep)\n>{Fore.GREEN} "
+            )
             .strip()
             .lower()
         )
@@ -105,6 +111,8 @@ Age     -> {self.stat_age}
                     age_value=1, food_value=5, mood_value=5, fatigue_value=5
                 )
                 self.show_banner()
+            case ("q" | "quit" | "exit"):
+                print(f"{Fore.CYAN}Thank you :)")
             case _:
                 self.select_move()
 

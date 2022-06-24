@@ -24,7 +24,7 @@ default_names = [
 ]
 
 
-class Gachamotchi:
+class Gachimotchi:
     def __init__(self, names: list, ascii_art: str):
         self.names = names
         self.ascii_art = ascii_art
@@ -217,7 +217,7 @@ Age     -> {self.stat_age}
 
 
 def main():
-    gm = Gachamotchi(default_names, pet_art)
+    gm = Gachimotchi(default_names, pet_art)
     gm.select_name()
     gm.show_banner()
 

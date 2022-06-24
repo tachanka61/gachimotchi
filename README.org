@@ -20,6 +20,6 @@
 - [[#add-screenshots][Add screenshots]]
 
 * Description
-Simple but funny tagamotchi-like game written in Python
+Simple but funny tamagotchi-like game written in Python
 
 * TODO Add screenshots

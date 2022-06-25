@@ -17,9 +17,37 @@
 
 * Table Of Contents :toc:
 - [[#description][Description]]
-- [[#add-screenshots][Add screenshots]]
-
+- [[#installation][Installation]]
+- [[#showcase][Showcase]]
 * Description
 Simple but funny tamagotchi-like game written in Python
 
-* TODO Add screenshots
+* Installation
++ First clone git repository:
+
+#+begin_src shell
+git clone https://github.com/tachanka61/gachimotchi.git
+#+end_src
+
++ Go into this repository and install dependencies:
+
+#+begin_src shell
+cd gachimotchi
+pip install -r requirements.txt
+#+end_src
+
++ Now you can run the script:
+
+#+begin_src shell
+cd gachimotchi
+python gachimotchi.py
+#+end_src
+
+or
+
+#+begin_src shell
+cd gachimotchi
+./gachimotchi.py
+#+end_src
+
+* Showcase

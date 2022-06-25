@@ -113,6 +113,7 @@ Age     -> {self.stat_age}
                 self.show_banner()
             case ("q" | "quit" | "exit"):
                 print(f"{Fore.CYAN}Thank you :)")
+                exit(0)
             case _:
                 self.select_move()
 

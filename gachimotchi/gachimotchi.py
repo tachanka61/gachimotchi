@@ -133,7 +133,9 @@ Age     -> {self.stat_age}
 
         return self.stat_food
 
-    def move_play(self, food_value: int, mood_value: int, fatigue_value: int) -> dict:
+    def move_play(
+        self, food_value: int, mood_value: int, fatigue_value: int
+    ) -> dict[str, int]:
         """Play with the pet.
 
         Decrease food, increase mood and fatigue.
@@ -159,7 +161,7 @@ Age     -> {self.stat_age}
 
     def move_do_nothing(
         self, age_value: int, food_value: int, mood_value: int, fatigue_value: int
-    ) -> dict:
+    ) -> dict[str, int]:
         """Do nothing.
 
         Increase age and fatigue, decrease food and mood
@@ -181,7 +183,7 @@ Age     -> {self.stat_age}
             "mood": self.stat_mood,
         }
 
-    def move_sleep(self, age_value: int, food_value: int) -> dict:
+    def move_sleep(self, age_value: int, food_value: int) -> dict[str, int]:
         """Send your pet to bed.
 
         Increase age, decrease food, set fatigue to 0 and mood to 90.

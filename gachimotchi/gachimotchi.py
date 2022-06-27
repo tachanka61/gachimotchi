@@ -33,6 +33,9 @@ class Gachimotchi:
         self.stat_fatigue = 0
         self.stat_age = 0
         self.alive = True
+        self.move = None
+        self.banner = None
+        self.name = None
 
     def select_name(self) -> str:
         """Select a name for the pet.

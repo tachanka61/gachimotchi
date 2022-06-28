@@ -3,7 +3,13 @@
 # TODO: Add saves
 from random import choice
 from os import name as osname, system
-from colorama import Fore, init
+
+# Try to import colorama
+try:
+    from colorama import Fore, init
+except ImportError:
+    print("colorama module is not installed, try 'pip install colorama'")
+    exit(1)
 
 init(autoreset=True)
 
@@ -33,9 +39,9 @@ class Gachimotchi:
         self.stat_fatigue = 0
         self.stat_age = 0
         self.alive = True
-        self.move = None
-        self.banner = None
-        self.name = None
+        self.move = str(None)
+        self.banner = str(None)
+        self.name = str(None)
 
     def select_name(self) -> str:
         """Select a name for the pet.

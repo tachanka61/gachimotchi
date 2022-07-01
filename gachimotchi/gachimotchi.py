@@ -8,8 +8,13 @@ from os import name as osname, system
 try:
     from colorama import Fore, init
 except ImportError:
-    print("colorama module is not installed, try 'pip install colorama'")
-    exit(1)
+    print("colorama module is not installed, trying to install")
+    try:
+        system("pip install colorama")
+        from colorama import Fore, init
+    except OSError:
+        print("Failed to install colorama")
+        exit(1)
 
 init(autoreset=True)
 

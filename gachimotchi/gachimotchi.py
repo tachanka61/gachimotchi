@@ -126,8 +126,7 @@ Age     -> {self.stat_age}
                 )
                 self.show_banner()
             case ("q" | "quit" | "exit"):
-                print(f"{Fore.CYAN}Thank you :)")
-                exit(0)
+                self.bye()
             case _:
                 self.select_move()
 
@@ -232,14 +231,25 @@ Age     -> {self.stat_age}
 
         return self.alive
 
+    def bye(self) -> None:
+        print(f"\n{Fore.GREEN}Bye! Your pet will be waiting for you!")
+        exit(0)
+
 
 def main():
     gm = Gachimotchi(default_names, pet_art)
-    gm.select_name()
-    gm.show_banner()
 
-    while gm.alive:
-        gm.select_move()
+    try:
+        gm.select_name()
+        gm.show_banner()
+
+        while gm.alive:
+            gm.select_move()
+    except (KeyboardInterrupt, EOFError):
+        gm.bye()
+    except Exception:
+        print(f"{Fore.RED}Something get wrong!")
+        exit(1)
 
 
 if __name__ == "__main__":

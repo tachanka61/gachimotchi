@@ -10,7 +10,7 @@ try:
 except ImportError:
     print("colorama module is not installed, trying to install")
     try:
-        system("pip install colorama")
+        system("pip install colorama")  # Install colorama
         from colorama import Fore, init
     except OSError:
         print("Failed to install colorama")
@@ -44,9 +44,9 @@ class Gachimotchi:
         self.stat_fatigue = 0
         self.stat_age = 0
         self.alive = True
-        self.move = str(None)
-        self.banner = str(None)
-        self.name = str(None)
+        self.move = ""
+        self.banner = ""
+        self.name = ""
 
     def select_name(self) -> str:
         """Select a name for the pet.
@@ -63,7 +63,7 @@ class Gachimotchi:
         )
 
         # Choose random name if no name was selected
-        if self.name == "":
+        if not self.name:
             self.name = choice(self.names)
 
         return self.name
